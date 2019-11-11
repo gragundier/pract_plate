@@ -1,6 +1,11 @@
 # pract_plate
 Pact Plate clone written in OpenScad.
 
+
+OpenScad is a Free Open Source Programmic CAD.
+https://www.openscad.org/
+
+
 Pract Plate is a practical, re-usable, light mounting plate solution for 3d printer owners.  It uses hex nuts embedded during the printing process to fasten any drilled bolts.  OpenScad means I can make the design completely modular.  One of the main problems I had with the original Pact Plate was that it was M4.  So, I decided to make my design completely parametric to meet a variety of needs.  
 
 Q: Does this infringe on Pact Plate's patent? 
