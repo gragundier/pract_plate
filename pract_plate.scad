@@ -109,7 +109,8 @@ module  hex_casing(
     hexagon_uc = .2,
     thread_size = 3,
     hexagon_casing_additional_thickness = 2.5,
-    plate_modifier = [0,0,0]
+    plate_modifier = [0,0,0],
+    hex_rotation = 0,
 ) {
     true_hexagon_height = hexagon_height + hexagon_uc;
     true_hexagon_thickness = hexagon_thickness + hexagon_uc;
@@ -117,9 +118,9 @@ module  hex_casing(
     for(x = [-(thread_count[0]-1)/2:(thread_count[0]-1)/2]) {
                 for (y = [-(thread_count[1]-1)/2:(thread_count[1]-1)/2]) {
                     translate([x*plate_spread[0]+plate_modifier[0], y*plate_spread[1]+plate_modifier[1], plate_bed[2]/2])
-                        union() {
+                        rotate([0,0,hex_rotation])
                             regular_hexagon(plate_bed[2], hexagon_casing_thickness);
-                    }
+                    
                 }
             }
 }
@@ -170,8 +171,8 @@ module simple_connector(
     //echo(connector_count);
     for (y = [-(connector_count-1)/2:(connector_count-1)/2]) {
         //echo(y);
-        translate([plate_bed[0]/2-drill_depth, y*connector_spread, connector_height])
-            rotate([0, 90, 0])
+        translate([-plate_bed[0]/2+drill_depth, y*connector_spread, connector_height])
+            rotate([0, 270, 0])
                 droplet(d = connector_thread_size, h = drill_depth+0.2);
     }
 }
