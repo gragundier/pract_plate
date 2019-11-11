@@ -1,5 +1,6 @@
 # pract_plate
 Pact Plate clone written in OpenScad.
+![image](pract_plate_screenshot.png)
 
 
 OpenScad is a Free Open Source Programmic CAD.
