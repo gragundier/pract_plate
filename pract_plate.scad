@@ -1,8 +1,16 @@
 use <3dprint.scad>;
 
 $fn=200;
+
+//test_connector_thickness = 5;
+//connector_top(connector_thickness = test_connector_thickness);
+//translate([test_connector_thickness, 0, 0])
+//        connector_bottom(connector_thickness = test_connector_thickness);
+
+
 difference() {
-    pract_plate(plate_bed = [100, 100, 12.5], thread_count = [4,4,3]);
+    
+    pract_plate(plate_bed = [150, 150, 12.5], thread_count = [6,6,2], connector_count = 3);
     //translate([0,0,12.5])
         //cube([500,500, 10], center=true);
 }
@@ -10,15 +18,15 @@ difference() {
 module pract_plate(
     custom_coordinates = [],
     thread_size = 3,
-    tolerance = 0.2,
+    tolerance = 0.35,
     plate_bed  = [150, 150, 12.5],
     plate_spread = [25, 25, 2.5+2.4/2],
-    thread_count  = [6, 6, 3],
+    thread_count  = [6, 6, 2],
     hexagon_height = 2.4,
     hexagon_thickness = 5.4,
-    hexagon_uc = .2,
+    hexagon_uc = .35,
     plate_thickness = 2.5,
-    hexagon_casing_additional_thickness = 2.5,
+    hexagon_casing_additional_thickness = 4,
     truss_thickness = 2.5,
     plate_modifier = [0,0,6.25],
     connector_thread_size = 3,
@@ -27,7 +35,7 @@ module pract_plate(
     connector_drill_depth = 6, 
     connector_spread = 25
 ) {
-    true_hexagon_height = hexagon_height + hexagon_uc;
+    true_hexagon_height = hexagon_height + .2;
     true_hexagon_thickness = hexagon_thickness + hexagon_uc;
     hexagon_casing_thickness = true_hexagon_thickness+hexagon_casing_additional_thickness;
     
@@ -143,21 +151,6 @@ module plate_bed_shell(
 }
 
 function axis_plate_modifier(axis_plate_spread, axis_thread_count) = (axis_thread_count % 2 == 0) ? 0 : 0;
-
-module recessed_hole(
-    )
-{
-    
-}
-
-module connector_top(
-    plate_bed = [150, 150, 12.5],
-    plate_thickness = 2.5,
-    connector_thickness = 5,
-    connector_thread_size = 3
-) {
-    
-}
 
 module simple_connector(
     plate_bed = [150, 150, 12.5],
