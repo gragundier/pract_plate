@@ -44,4 +44,4 @@ Q: How strong is this plate?
 
 A: Here is a picture of a single unit M3 cell holding a 10lb weight.
 
-![image](https://drive.google.com/uc?export=view&id=160-dX1AfQTZL3uGBzljvv6r1yQIXrb_d/view?usp=sharing)
+![image](https://drive.google.com/uc?export=view&id=160-dX1AfQTZL3uGBzljvv6r1yQIXrb_d)
