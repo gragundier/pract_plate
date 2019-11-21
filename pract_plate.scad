@@ -10,35 +10,37 @@ $fn=200;
 
 difference() {
     
-    pract_plate(plate_bed = [150, 150, 12.5], thread_count = [6,6,2], connector_count = 3);
+    pract_plate(plate_bed = [100, 100, 12.5], thread_count = [4,4,2], connector_count = 3);
     //translate([0,0,12.5])
-        //cube([500,500, 10], center=true);
+    //    cube([500,500, 10], center=true);
 }
 
 module pract_plate(
     custom_coordinates = [],
     thread_size = 3,
-    tolerance = 0.35,
+    tolerance = 0.5,
     plate_bed  = [150, 150, 12.5],
     plate_spread = [25, 25, 2.5+2.4/2],
     thread_count  = [6, 6, 2],
     hexagon_height = 2.4,
     hexagon_thickness = 5.4,
-    hexagon_uc = .35,
+    hexagon_uc = .2,
     plate_thickness = 2.5,
-    hexagon_casing_additional_thickness = 4,
+    hexagon_casing_additional_thickness = 4.4,
     truss_thickness = 2.5,
     plate_modifier = [0,0,6.25],
     connector_thread_size = 3,
     connector_count = 3,
     connector_height = 6,
     connector_drill_depth = 6, 
-    connector_spread = 25
+    connector_spread = 25,
+    nozzle_diameter = 0.8
 ) {
-    true_hexagon_height = hexagon_height + .2;
+    true_hexagon_height = hexagon_height+hexagon_uc/2;
     true_hexagon_thickness = hexagon_thickness + hexagon_uc;
     hexagon_casing_thickness = true_hexagon_thickness+hexagon_casing_additional_thickness;
     
+     
     //plate_modifier = [ for (x = [0:2]) axis_plate_modifier(plate_spread[x], thread_count[x])];
     //echo(plate_modifier);
     
@@ -162,10 +164,12 @@ module simple_connector(
     ) {
     //echo("simple connector");
     //echo(connector_count);
-    for (y = [-(connector_count-1)/2:(connector_count-1)/2]) {
-        //echo(y);
-        translate([-plate_bed[0]/2+drill_depth, y*connector_spread, connector_height])
-            rotate([0, 270, 0])
-                droplet(d = connector_thread_size, h = drill_depth+0.2);
+    if (connector_count > 0) {
+        for (y = [-(connector_count-1)/2:(connector_count-1)/2]) {
+            //echo(y);
+            translate([-plate_bed[0]/2+drill_depth, y*connector_spread, connector_height])
+                rotate([0, 270, 0])
+                    droplet(d = connector_thread_size, h = drill_depth+0.2);
+        }
     }
 }
