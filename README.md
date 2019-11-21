@@ -1,6 +1,6 @@
 # pract_plate
 Pact Plate clone written in OpenScad.
-![image](pract_plate_screenshot.png)
+![image](https://drive.google.com/file/d/12d_HOUytPB6_IVYhd0VLitnlZqcQuSYB/view?usp=sharing)
 
 
 OpenScad is a Free Open Source Programmic CAD.
@@ -38,3 +38,9 @@ Q: License?
 A: Uhh, it's still too early to really put a official license.  Whatever I say goes I guess. But if you follow GPLv2 rules, I won't really get mad at you.  
 
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Q: How strong is this plate?
+
+A: Here is a picture of a single unit M3 cell holding a 10lb weight.
+
+![image](https://drive.google.com/file/d/160-dX1AfQTZL3uGBzljvv6r1yQIXrb_d/view?usp=sharing)
