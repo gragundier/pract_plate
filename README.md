@@ -1,6 +1,7 @@
 # pract_plate
 Pact Plate clone written in OpenScad.
-[[https://drive.google.com/file/d/12d_HOUytPB6_IVYhd0VLitnlZqcQuSYB/view?usp=sharing]]
+
+![image](https://drive.google.com/uc?export=view&id=12d_HOUytPB6_IVYhd0VLitnlZqcQuSYB)
 
 
 OpenScad is a Free Open Source Programmic CAD.
@@ -43,4 +44,4 @@ Q: How strong is this plate?
 
 A: Here is a picture of a single unit M3 cell holding a 10lb weight.
 
-[[https://drive.google.com/file/d/160-dX1AfQTZL3uGBzljvv6r1yQIXrb_d/view?usp=sharing]]
+![image](https://drive.google.com/uc?export=view&id=160-dX1AfQTZL3uGBzljvv6r1yQIXrb_d/view?usp=sharing)
